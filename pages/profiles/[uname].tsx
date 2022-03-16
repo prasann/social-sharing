@@ -9,7 +9,7 @@ function Profile() {
     const router = useRouter()
     const {uname} = router.query
 
-    const [data, setData] = useState<User>({name: "", bio: ""})
+    const [data, setData] = useState<User | undefined>(undefined)
     const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -29,10 +29,11 @@ function Profile() {
         <div>
             <Head>
                 <title>{uname?.toString()}</title>
-                <meta property="og:title" content={`${ data.name } - GitHub Profiler`} />
-                <meta property="og:description" content={`${ data.bio }`} />
-                <meta property="og:image:width" content="2024" />
-                <meta property="og:image:height" content="1012" />
+                <meta property="og:url" content={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content={`${data.name} - Github Profiler`}/>
+                <meta property="og:description" content={`${data.bio}`}/>
+                <meta property="og:image" content={`https://social-sharing-tawny.vercel.app/${data.name}`}/>
             </Head>
             <h1>{data.name}</h1>
 
