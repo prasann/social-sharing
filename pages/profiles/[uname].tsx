@@ -3,6 +3,7 @@ import {User} from "../api/user";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import Head from "next/head";
+import {TwitterShareButton} from "react-share";
 
 function Profile() {
 
@@ -31,12 +32,17 @@ function Profile() {
                 <title>{uname?.toString()}</title>
                 <meta property="og:url" content={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:title" content={`${data.name} - Github Profiler`}/>
+                <meta property="og:title" content={`${data.name}         - Github Profiler`}/>
                 <meta property="og:description" content={`${data.bio}`}/>
                 <meta property="og:image" content={`https://social-sharing-tawny.vercel.app/${data.name}`}/>
             </Head>
             <h1>{data.name}</h1>
-
+            <TwitterShareButton title={`${data.name}         - Github Profiler`}
+                                url={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}
+                                hashtags={["#developer"]}
+                                related={["pvenk"]}>
+                {"Share in Twitter"}
+            </TwitterShareButton>
             <Link href={"/"}>Back</Link>
         </div>
     )
