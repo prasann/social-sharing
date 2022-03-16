@@ -28,8 +28,10 @@
   flex-grow: 1;
 }
 
-.title a {
+.main a {
   color: #0070f3;
+  font-size: 1.5rem;
+  line-height: 60px;
   text-decoration: none;
 }
 
