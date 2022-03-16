@@ -3,7 +3,8 @@ import {User} from "../api/user";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import Head from "next/head";
-import {TwitterShareButton} from "react-share";
+import {TwitterIcon, TwitterShareButton} from "react-share";
+import styles from "../../styles/Home.module.css";
 
 function Profile() {
 
@@ -36,14 +37,18 @@ function Profile() {
                 <meta property="og:description" content={`${data.bio}`}/>
                 <meta property="og:image" content={`https://social-sharing-tawny.vercel.app/${data.name}`}/>
             </Head>
-            <h1>{data.name}</h1>
-            <TwitterShareButton title={`${data.name}         - Github Profiler`}
-                                url={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}
-                                hashtags={["#developer"]}
-                                related={["pvenk"]}>
-                {"Share in Twitter"}
-            </TwitterShareButton>
-            <Link href={"/"}>Back</Link>
+            <main className={styles.main}>
+                <h1>{data.name}</h1>
+                <TwitterShareButton title={`${data.name}         - Github Profiler`}
+                                    url={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}
+                                    hashtags={["#developer"]}
+                                    related={["pvenk"]}>
+                    <div className={styles.card}>Share my profile on <TwitterIcon size={32} round={true}/></div>
+                </TwitterShareButton>
+                <div>
+                    <Link href={"/"}>Back</Link>
+                </div>
+            </main>
         </div>
     )
 }
