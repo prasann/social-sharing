@@ -33,9 +33,8 @@ function Profile() {
                 <title>{uname?.toString()}</title>
                 <meta property="og:url" content={`https://social-sharing-tawny.vercel.app/profiles/${uname}`}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:title" content={`${data.name}         - Github Profiler`}/>
-                <meta property="og:description" content={`${data.bio}`}/>
-                <meta property="og:image" content={`https://social-sharing-tawny.vercel.app/${data.name}`}/>
+                <meta property="og:title" content="Developer Profiles !!"/>
+                <meta property="og:description" content="Hey, checkout my developer profile created in blah"/>
             </Head>
             <main className={styles.main}>
                 <h1>{data.name}</h1>
